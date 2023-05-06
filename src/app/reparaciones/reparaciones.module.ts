@@ -29,8 +29,6 @@ import { TipoReparacionComponent } from './components/tipo-reparacion/tipo-repar
 
   ],
   exports: [
-    NewRepairComponent,
-    SearchRepairComponent
 
   ]
 })

@@ -5,6 +5,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { OptionsSidebarComponent } from './components/options-sidebar/options-sidebar.component';
 import { RouterModule } from '@angular/router';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
 
 
 
@@ -13,6 +14,7 @@ import { RouterModule } from '@angular/router';
     SidebarComponent,
     NavbarComponent,
     OptionsSidebarComponent,
+    TopBarComponent,
 
   ],
   imports: [
@@ -22,7 +24,8 @@ import { RouterModule } from '@angular/router';
   exports: [
     SidebarComponent,
     NavbarComponent,
-    OptionsSidebarComponent
+    OptionsSidebarComponent,
+    TopBarComponent
   ]
 })
 export class SharedModule { }

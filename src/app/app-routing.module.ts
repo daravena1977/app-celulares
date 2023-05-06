@@ -7,6 +7,14 @@ const routes: Routes = [
     loadChildren: () => import('./reparaciones/reparaciones.module').then(m => m.ReparacionesModule)
   },
   {
+    path: 'accesorios',
+    loadChildren: () => import('./accesorios/accesorios.module').then(m => m.AccesoriosModule)
+  },
+  {
+    path: 'repuestos',
+    loadChildren: () => import('./repuestos/repuestos.module').then(m => m.RepuestosModule)
+  },
+  {
     path: '**',
     redirectTo: 'reparaciones',
   }

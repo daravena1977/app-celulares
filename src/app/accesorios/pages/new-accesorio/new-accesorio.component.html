@@ -1,0 +1,64 @@
+<form>
+  <!-- Top-bar -->
+  <shared-top-bar></shared-top-bar>
+  <hr />
+  <fieldset class="form-control d-flex gap-2 flex-wrap justify-content-start align-items-center border-0">
+    <h6 class="w-100">Detalle:</h6>
+    <input
+      class="form-control w-25 mb-2 border border-dark border-opacity-25"
+      type="number"
+      placeholder="SKU"
+      disabled
+    />
+    <select
+      class="form-select w-25 mb-2 border border-dark border-opacity-25"
+      aria-label="Default select example"
+      disabled
+    >
+      <option selected>Accesorio</option>
+      <option value="1">Cargador</option>
+      <option value="2">Blindado</option>
+      <option value="3">Funda</option>
+      <option value="3">Soporte</option>
+    </select>
+    <select
+      class="form-select w-25 mb-2 border border-dark border-opacity-25"
+      aria-label="Default select example"
+      disabled
+    >
+      <option selected>Tipo</option>
+      <option value="1">V8</option>
+      <option value="2">C</option>
+      <option value="3">Hidrogel</option>
+      <option value="3">Vehiculo</option>
+    </select>
+    <input
+      class="form-control w-25 mb-2 border border-dark border-opacity-25"
+      type="number"
+      placeholder="Precio Costo"
+      disabled
+    />
+    <input
+      class="form-control w-25 mb-2 border border-dark border-opacity-25"
+      type="number"
+      placeholder="Precio Venta"
+      disabled
+    />
+    <input
+      class="form-control w-25 mb-2 border border-dark border-opacity-25"
+      type="number"
+      placeholder="Cantidad stock"
+      disabled
+    />
+  </fieldset>
+  <hr />
+  <fieldset class="form-control d-flex gap-2 align-items-center p-3 border-0 mt-5">
+    <input
+      class="form-control w-25 border border-dark border-opacity-25"
+      type="number"
+      placeholder="Cantidad a ingresar"
+    />
+    <button class="btn btn-primary">Actualizar Precio Costo</button>
+    <button class="btn btn-primary">Actualizar Precio Venta</button>
+  </fieldset>
+</form>

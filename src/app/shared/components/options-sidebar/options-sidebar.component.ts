@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { OptionsSidebar } from 'src/app/reparaciones/interfaces/options-sidebar.interface';
+import { OptionsSidebar } from 'src/app/interfaces/options-sidebar.interface';
 
 @Component({
   selector: 'shared-options-sidebar',

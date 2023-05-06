@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ReparacionesService } from '../../reparaciones.service';
-import { OptionsSidebar } from '../../interfaces/options-sidebar.interface';
+import { OptionsSidebar } from '../../../interfaces/options-sidebar.interface';
+import { SidebarService } from 'src/app/shared/components/sidebar/sidebar.service';
 
 @Component({
   selector: 'reparaciones-new',
@@ -8,10 +9,27 @@ import { OptionsSidebar } from '../../interfaces/options-sidebar.interface';
   styleUrls: ['./new-repair.component.css'],
 })
 export class NewRepairComponent {
+  private _opcionesSideBar: OptionsSidebar[] = [
+    {
+      name: 'Nueva Reparación',
+      route: 'reparaciones/new-reparacion'
+    },
+    {
+      name: 'Buscar Reparacion',
+      route: 'reparaciones/search-reparacion'
+    },
+    {
+      name: 'Cotizar Reparacion',
+      route: 'reparaciones/cotizar-reparacion'
+    }
+  ];
 
 
+  constructor(
+    private sidebarService: SidebarService,
+    ) {
 
-  constructor(private reparacionesService: ReparacionesService) {
+      this.sidebarService.optionsSideBar = this._opcionesSideBar
 
   }
 

@@ -1,6 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { OptionsSidebar } from 'src/app/reparaciones/interfaces/options-sidebar.interface';
+import { Component } from '@angular/core';
+import { AccesoriosService } from 'src/app/accesorios/accesorios.service';
+import { OptionsSidebar } from 'src/app/interfaces/options-sidebar.interface';
 import { ReparacionesService } from 'src/app/reparaciones/reparaciones.service';
+import { SidebarService } from './sidebar.service';
 
 @Component({
   selector: 'shared-sidebar',
@@ -14,12 +16,13 @@ import { ReparacionesService } from 'src/app/reparaciones/reparaciones.service';
 })
 export class SidebarComponent {
 
-  constructor(private reparacionesService: ReparacionesService ) {
+  constructor(
+    private sidebarService: SidebarService ) {
 
   }
 
-  get optionsSideBar(): OptionsSidebar [] {
-    return this.reparacionesService.optionsSideBar
+  optionsSideBar(): OptionsSidebar [] {
+    return this.sidebarService.optionsSidebar
   }
 
 
