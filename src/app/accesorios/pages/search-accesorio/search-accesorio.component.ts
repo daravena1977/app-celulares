@@ -9,13 +9,18 @@ import { AccesoriosService } from '../../accesorios.service';
   styleUrls: ['./search-accesorio.component.css']
 })
 export class SearchAccesorioComponent {
-
+  private _optionsSidebar: OptionsSidebar[] = [];
 
 
   constructor(
-    ) {
-
-
+    private sidebarService: SidebarService,
+    private accesoriosService: AccesoriosService) {
 
   }
+  ngOnInit(): void {
+    this._optionsSidebar = this.sidebarService.optionsAccesorios
+    this.sidebarService.optionsSideBar = this._optionsSidebar
+  }
+
+
 }

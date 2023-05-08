@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AccesoriosService } from '../../accesorios.service';
 import { OptionsSidebar } from 'src/app/interfaces/options-sidebar.interface';
 import { SidebarService } from 'src/app/shared/components/sidebar/sidebar.service';
@@ -8,24 +8,18 @@ import { SidebarService } from 'src/app/shared/components/sidebar/sidebar.servic
   templateUrl: './new-accesorio.component.html',
   styleUrls: ['./new-accesorio.component.css']
 })
-export class NewAccesorioComponent {
-  private _opcionesSideBar: OptionsSidebar[] = [
-    {
-      name: 'Ingresar Accesorios',
-      route: 'accesorios/new-accesorio'
-    },
-    {
-      name: 'Buscar Accesorios',
-      route: 'accesorios/search-accesorio'
-    },
-  ];
+export class NewAccesorioComponent implements OnInit {
+  private _optionsSidebar: OptionsSidebar[] = [];
 
 
   constructor(
-    private sidebarService: SidebarService) {
+    private sidebarService: SidebarService,
+    private accesoriosService: AccesoriosService) {
 
-    this.sidebarService.optionsSideBar = this._opcionesSideBar
-
+  }
+  ngOnInit(): void {
+    this._optionsSidebar = this.sidebarService.optionsAccesorios
+    this.sidebarService.optionsSideBar = this._optionsSidebar
   }
 
 }

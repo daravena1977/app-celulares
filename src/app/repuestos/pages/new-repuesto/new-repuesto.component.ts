@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OptionsSidebar } from 'src/app/interfaces/options-sidebar.interface';
 import { SidebarService } from 'src/app/shared/components/sidebar/sidebar.service';
 
@@ -7,25 +7,19 @@ import { SidebarService } from 'src/app/shared/components/sidebar/sidebar.servic
   templateUrl: './new-repuesto.component.html',
   styleUrls: ['./new-repuesto.component.css']
 })
-export class NewRepuestoComponent {
+export class NewRepuestoComponent implements OnInit {
 
-  private _opcionesSideBar: OptionsSidebar[] = [
-    {
-      name: 'Ingresar Repuestos',
-      route: 'repuestos/new-repuesto'
-    },
-    {
-      name: 'Buscar Repuestos',
-      route: 'repuestos/search-repuesto'
-    },
-  ];
-
+  private _optionsSidebar: OptionsSidebar[] = [];
 
   constructor(
     private sidebarService: SidebarService,
-    ) {
+  ) {}
 
-      this.sidebarService.optionsSideBar = this._opcionesSideBar
-
+  ngOnInit(): void {
+    this._optionsSidebar = this.sidebarService.optionsRepuestos;
+    this.sidebarService.optionsSideBar = this._optionsSidebar;
   }
+
+
+
 }

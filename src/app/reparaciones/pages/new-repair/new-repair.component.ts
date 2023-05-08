@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { ReparacionesService } from '../../reparaciones.service';
+import { Component, OnInit } from '@angular/core';
 import { OptionsSidebar } from '../../../interfaces/options-sidebar.interface';
 import { SidebarService } from 'src/app/shared/components/sidebar/sidebar.service';
 
@@ -8,32 +7,16 @@ import { SidebarService } from 'src/app/shared/components/sidebar/sidebar.servic
   templateUrl: './new-repair.component.html',
   styleUrls: ['./new-repair.component.css'],
 })
-export class NewRepairComponent {
-  private _opcionesSideBar: OptionsSidebar[] = [
-    {
-      name: 'Nueva Reparación',
-      route: 'reparaciones/new-reparacion'
-    },
-    {
-      name: 'Buscar Reparacion',
-      route: 'reparaciones/search-reparacion'
-    },
-    {
-      name: 'Cotizar Reparacion',
-      route: 'reparaciones/cotizar-reparacion'
-    }
-  ];
-
+export class NewRepairComponent implements OnInit {
+  private _optionsSidebar: OptionsSidebar[] = [];
 
   constructor(
     private sidebarService: SidebarService,
-    ) {
+  ) {}
 
-      this.sidebarService.optionsSideBar = this._opcionesSideBar
-
+  ngOnInit(): void {
+    this._optionsSidebar = this.sidebarService.optionsReparaciones;
+    this.sidebarService.optionsSideBar = this._optionsSidebar;
   }
-
-
-
-
 }
+
