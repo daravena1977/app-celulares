@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CacheStoreSidebar } from 'src/app/interfaces/cache-store-sidebar.interface';
-
 import { OptionsSidebar } from 'src/app/interfaces/options-sidebar.interface';
 
 @Injectable({

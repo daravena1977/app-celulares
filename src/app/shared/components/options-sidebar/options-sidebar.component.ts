@@ -14,11 +14,8 @@ export class OptionsSidebarComponent {
   }
 
   @Input()
-  public opciones?: OptionsSidebar[];
+  public opciones!: OptionsSidebar[];
 
-  goToPage(routes: any): void {
-    this.router.navigate(routes)
-  }
 
 }
 
